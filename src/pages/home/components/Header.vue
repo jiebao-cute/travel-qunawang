@@ -17,8 +17,6 @@ export default {
   name: 'HomeHeader'
 }
 </script>
-
-
 <style  lang="stylus" scoped>
 @import "~@/assets/styles/varibles.styl"
 .header {
@@ -34,7 +32,6 @@ export default {
       font-size: .4rem
     }
   }
-
   .header-input {
     flex: 1
     background #ffffff
@@ -46,9 +43,7 @@ export default {
     color: #ccc
     align-items: center
     padding-left: .2rem
-
   }
-
   .header-right {
     width: 1.24rem
     float: right
