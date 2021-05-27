@@ -2,8 +2,8 @@
 
   <div class="icons">
     <swiper :options="swiperOptions">
-      <swiper-slide >
-        <div class="icon" v-for="item in iconList" :key="item.id">
+      <swiper-slide v-for="(page, index) in pages" :key="index">
+        <div class="icon" v-for="item in page"  :key="item.id">
           <div class="icon-img">
             <img class="icon-img-center" :src="item.imgUrl" alt="">
           </div>
@@ -70,6 +70,19 @@ export default {
         },
       ]
     }
+  },
+  computed: {
+     pages () { //将每八个item分为一个page
+       const pages = []
+        this.iconList.forEach((item,index)=>{
+          const page = Math.floor(index/8)
+          if (!pages[page]){
+            pages[page]=[]
+          }
+          pages[page].push(item)
+        })
+       return pages
+     }
   }
 }
 </script>
