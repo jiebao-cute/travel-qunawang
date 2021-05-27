@@ -17,7 +17,9 @@ export default {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination', //将点传播出去
-        loop: true //循环轮播
+        loop: true, //循环轮播
+        autoplay: true,//自动轮播
+        speed: 3000//轮播时间
       },
       swiperList: [{
         id: '0001',
