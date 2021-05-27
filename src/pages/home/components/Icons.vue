@@ -126,6 +126,9 @@ export default {
     height: .44rem
     color: $darkTextColor
     text-align: center
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
   }
 }
 </style>
