@@ -89,6 +89,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import "~@/assets/styles/varibles.styl"
+@import "~@/assets/styles/mixins.styl"
 .icons >>> .swiper-container {
   height: 0
   padding-bottom: 50%
@@ -126,9 +127,7 @@ export default {
     height: .44rem
     color: $darkTextColor
     text-align: center
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
+    ellipsis()
   }
 }
 </style>
