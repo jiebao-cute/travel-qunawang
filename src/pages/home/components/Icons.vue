@@ -1,7 +1,7 @@
 <template>
 
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOptions">
       <swiper-slide>
         <div class="icon">
           <div class="icon-img">
@@ -25,18 +25,22 @@
 <script>
 export default {
   name: 'HomeIcons',
-
+  data() {
+    return {
+      swiperOptions: {
+        loop: true
+      },
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import "~@/assets/styles/varibles.styl"
-.icons {
-  background: pink
+.icons >>> .swiper-container{
   height: 0
-  overflow: hidden
   padding-bottom: 50%
-
+}
   .icon {
     position: relative
     float: left
@@ -70,6 +74,5 @@ export default {
       color: $darkTextColor
       text-align: center
     }
-  }
 }
 </style>
