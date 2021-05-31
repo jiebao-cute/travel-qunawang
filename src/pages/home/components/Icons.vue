@@ -92,7 +92,6 @@ export default {
     height: 0
     width: 25%
     padding-bottom: 25%
-
     .icon-img {
       position: absolute
       box-sizing: border-box
