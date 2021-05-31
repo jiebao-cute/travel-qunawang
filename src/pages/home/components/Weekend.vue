@@ -50,7 +50,6 @@ export default {
 .title {
   background: #eee
   line-height: .8rem
-  margin-top: .2rem
   text-indent: .2rem
 }
 .item {
