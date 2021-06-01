@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header></home-header>
+    <home-header :city="city"></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
     <home-recommend></home-recommend>
@@ -17,6 +17,11 @@ import HomeWeekend from './components/Weekend.vue'
 import axios from 'axios'
 export default {
   name: 'Home',
+  data(){
+    return {
+      city:'',
+    }
+  },
   components: {HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend},
   methods: {
     getHomeInfo () {
@@ -24,7 +29,11 @@ export default {
       .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
-      console.log(res)
+      res = res.data
+      if(res.ret && res.data){
+        const data = res.data
+        this.city = data.city
+      }
     }
   },
   mounted () {
