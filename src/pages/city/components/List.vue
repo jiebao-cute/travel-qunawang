@@ -1,5 +1,6 @@
 <template>
-  <div class="list">
+  <div class="list" ref="wrapper">
+    <div>
     <div class="area">
       <div class="title border-topbottom" >当前城市</div>
       <div class="button-list">
@@ -57,13 +58,18 @@
         <div class="item border-bottom"> 阿拉尔</div>
         <div class="item border-bottom"> 阿拉尔</div>
       </div>
+     </div>
     </div>
   </div>
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  }
 }
 </script>
 <style  lang="stylus" scoped>
