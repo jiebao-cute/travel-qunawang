@@ -2,7 +2,7 @@
   <div>
     <home-header :city="city"></home-header>
     <home-swiper :list="swiperList"></home-swiper>
-    <home-icons></home-icons>
+    <home-icons :list="iconList"></home-icons>
     <home-recommend></home-recommend>
     <home-weekend></home-weekend>
   </div>
@@ -21,6 +21,7 @@ export default {
     return {
       city:'',
       swiperList: [],
+      iconList: [],
     }
   },
   components: {HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend},
@@ -35,6 +36,7 @@ export default {
         const data = res.data
         this.city = data.city
         this.swiperList = data.swiperList
+        this.iconList = data.iconList
       }
     }
   },
