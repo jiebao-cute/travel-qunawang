@@ -38,8 +38,8 @@ export default {
       })
       return pages
     },
-      showIconList(){
-        return this.iconList.length
+    showIconList () {
+      return this.iconList.length
     }
   }
 }
