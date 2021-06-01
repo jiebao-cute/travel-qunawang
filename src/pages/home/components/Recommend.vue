@@ -39,6 +39,7 @@ export default {
   line-height: .8rem
   margin-top: .2rem
   text-indent: .2rem
+  font-size: .3rem
 }
 .item {
   display: flex

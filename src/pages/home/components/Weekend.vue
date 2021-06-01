@@ -39,6 +39,7 @@ export default {
   background: #eee
   line-height: .8rem
   text-indent: .2rem
+  font-size: .3rem
 }
 .item {
   .img-wrapper{

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper ref="mySwiper" :options="swiperOptions" v-if="swiperlist.length">
       <swiper-slide v-for="a in swiperlist" :key="a.id">
         <img class="swiper-img" :src="a.imgUrl" alt="slow"/>
       </swiper-slide>

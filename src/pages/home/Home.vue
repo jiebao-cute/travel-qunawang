@@ -17,24 +17,24 @@ import HomeWeekend from './components/Weekend.vue'
 import axios from 'axios'
 export default {
   name: 'Home',
-  data(){
+  data () {
     return {
-      city:'',
+      city: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
-      weekendList:[]
+      weekendList: []
     }
   },
   components: {HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend},
   methods: {
     getHomeInfo () {
       axios.get('/api/index.json')
-      .then(this.getHomeInfoSucc)
+        .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
       res = res.data
-      if(res.ret && res.data){
+      if (res.ret && res.data) {
         const data = res.data
         this.city = data.city
         this.swiperList = data.swiperList
