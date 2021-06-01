@@ -17,7 +17,8 @@ export default {
   name: 'HomeHeader',
   props: {
     city: String
-  }
+  },
+
 
 }
 </script>

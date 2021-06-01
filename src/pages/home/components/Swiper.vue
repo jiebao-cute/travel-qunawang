@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOptions" v-if="swiperlist.length">
+    <swiper ref="mySwiper" :options="swiperOptions" v-if="showSwiper">
       <swiper-slide v-for="a in swiperlist" :key="a.id">
         <img class="swiper-img" :src="a.imgUrl" alt="slow"/>
       </swiper-slide>
@@ -25,7 +25,13 @@ export default {
         speed: 3000 //  轮播时间
       }
     }
+  },
+  computed: {
+    showSwiper(){
+      return this.swiperlist.length
+    }
   }
+
 }
 </script>
 
