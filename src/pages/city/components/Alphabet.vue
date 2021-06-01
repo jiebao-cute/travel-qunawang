@@ -31,7 +31,6 @@ export default {
     text-align: center
     line-height: .4rem
     color: $bgColor
-
   }
 }
 </style>
