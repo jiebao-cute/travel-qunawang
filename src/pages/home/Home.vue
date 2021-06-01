@@ -1,9 +1,9 @@
 <template>
   <div>
     <home-header :city="city"></home-header>
-    <home-swiper :list="swiperList"></home-swiper>
-    <home-icons :list="iconList"></home-icons>
-    <home-recommend></home-recommend>
+    <home-swiper :swiperlist="swiperList"></home-swiper>
+    <home-icons :iconList="iconList"></home-icons>
+    <home-recommend :recommendList="recommendList"></home-recommend>
     <home-weekend></home-weekend>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
       city:'',
       swiperList: [],
       iconList: [],
+      recommendList: [],
     }
   },
   components: {HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend},
@@ -37,6 +38,7 @@ export default {
         this.city = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
+        this.recommendList = data.recommendList
       }
     }
   },

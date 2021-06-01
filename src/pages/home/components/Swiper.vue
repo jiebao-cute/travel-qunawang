@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide v-for="a in list" :key="a.id">
+      <swiper-slide v-for="a in swiperlist" :key="a.id">
         <img class="swiper-img" :src="a.imgUrl" alt="slow"/>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -14,7 +14,7 @@
 export default {
   name: 'HomeSwiper',
   props: {
-    list: Array
+    swiperlist: Array
   },
   data () {
     return {

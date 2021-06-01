@@ -17,7 +17,7 @@
 export default {
   name: 'HomeIcons',
   props:{
-    list: []
+    iconList: Array
   },
   data () {
     return {
@@ -29,7 +29,7 @@ export default {
   computed: {
     pages () { // 将每八个item分为一个page
       const pages = []
-      this.list.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
