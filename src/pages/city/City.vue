@@ -8,13 +8,26 @@
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header.vue'
 import CitySearch from './components/Search.vue'
 import CityList from './components/List.vue'
 import CityAlphabet from './components/Alphabet'
 export default {
   name: 'City',
-  components:{ CityHeader, CitySearch, CityList, CityAlphabet}
+  components:{ CityHeader, CitySearch, CityList, CityAlphabet},
+  methods: {
+    getCityInfo(){
+      axios.get('/api/city.json')
+        .then(this.getCityInfoSucc)
+    },
+    getCityInfoSucc(res){
+      console.log(res)
+    }
+  },
+  mounted () {
+      this.getCityInfo()
+  }
 }
 </script>
 <style  lang="stylus" scoped>
