@@ -85,20 +85,17 @@ export default {
   bottom: 0
   .title {
     background: #eeeeee
-    line-height: .44rem
+    line-height: .54rem
     color: #666
     font-size: .26rem
     padding-left: .2rem
   }
-
   .button-list {
     padding: .1rem .6rem .1rem .1rem
     overflow: hidden
-
     .button-wrapper {
       float: left
       width: 33.33%
-
       .button {
         padding: .1rem 0
         margin: .1rem
@@ -108,13 +105,11 @@ export default {
       }
     }
   }
-
   .border-bottom {
     &:before {
       border-color: #ccc
     }
   }
-
   .item-list {
     .item {
       line-height: .76rem
