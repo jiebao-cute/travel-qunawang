@@ -19,7 +19,8 @@ export default {
   data () {
     return {
       touchStatus: false,
-      startY: 0
+      startY: 0,
+      timer: null
     }
   },
   computed: {
@@ -46,11 +47,16 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        const touchY = e.touches[0].clientY - 74 // 手指触碰相对高度
-        const index = Math.floor((touchY - this.startY) / 20)
-        if (index >= 0 && index <= this.letters.length) {
-          this.$emit('change', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 74 // 手指触碰相对高度
+          const index = Math.floor((touchY - this.startY) / 20)
+          if (index >= 0 && index <= this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
       }
     },
     handleTouchEnd () {
