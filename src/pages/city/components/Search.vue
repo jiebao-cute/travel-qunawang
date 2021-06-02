@@ -36,6 +36,9 @@ export default {
       if (this.timer) {
         clearTimeout(this.timer)
       }
+      if (!this.keyword) {
+        return this.list = []
+      }
       this.timer = setTimeout(() => {
         const result = []
         for (let i in this.cities) {
