@@ -3,7 +3,7 @@
   <div class="search" >
    <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音"/>
   </div>
-  <div class="search-content">
+  <div class="search-content" ref="search">
     <ul>
       <li class="search-item border-bottom" v-for="item in list">{{item.name}}</li>
     </ul>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
   props:{
@@ -23,6 +24,12 @@ export default {
       list: [],
       timer: null
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search)
+  },
+  updated () {
+    this.scroll.refresh()
   },
   watch: {
     keyword () {
