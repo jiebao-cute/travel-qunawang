@@ -5,7 +5,7 @@
   </div>
   <div class="search-content" ref="search">
     <ul>
-      <li class="search-item border-bottom" v-for="item in list">{{item.name}}</li>
+      <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
     </ul>
   </div>
   </div>
@@ -15,7 +15,7 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
-  props:{
+  props: {
     cities: Object
   },
   data () {
@@ -34,18 +34,19 @@ export default {
   watch: {
     keyword () {
       if (this.timer) {
-        clearTimeout(this.timer)}
-        this.timer = setTimeout(() => {
-          const result = []
-          for (let i in this.cities) {
-            this.cities[i].forEach( (value) => {
-              if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1){
-                result.push(value)
-              }
-            })
-          }
-          this.list = result
-        },100)
+        clearTimeout(this.timer)
+      }
+      this.timer = setTimeout(() => {
+        const result = []
+        for (let i in this.cities) {
+          this.cities[i].forEach((value) => {
+            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+              result.push(value)
+            }
+          })
+        }
+        this.list = result
+      }, 100)
     }
   }
 }
