@@ -5,7 +5,7 @@
   </div>
   <div class="search-content">
     <ul>
-      <li v-for="item in list">{{item.name}}</li>
+      <li class="search-item border-bottom" v-for="item in list">{{item.name}}</li>
     </ul>
   </div>
   </div>
@@ -38,7 +38,7 @@ export default {
             })
           }
           this.list = result
-        },16)
+        },100)
     }
   }
 }
@@ -70,5 +70,11 @@ export default {
     bottom: 0
     left: 0
     background: #cccccc
+    .search-item{
+      line-height: .62rem
+      padding-left: .2rem
+      color: #666
+      background: #ffffff
+    }
   }
 </style>
