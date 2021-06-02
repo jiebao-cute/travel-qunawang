@@ -38,7 +38,7 @@ export default {
         this.city = data.city
       }
     },
-    handleLetterChange(letter){
+    handleLetterChange (letter) {
       this.letter = letter
     }
   },

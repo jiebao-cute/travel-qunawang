@@ -41,12 +41,12 @@ export default {
     letter: String
   },
   mounted () {
-     this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper)
   },
   updated () {
     this.scroll.refresh()
   },
-  watch:{
+  watch: {
     letter () {
       if (this.letter) {
         const element = this.$refs[this.letter][0]

@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     handleLetterClick (e) {
-       this.$emit('change', e.target.innerText)
+      this.$emit('change', e.target.innerText)
     }
   }
 
