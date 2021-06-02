@@ -3,9 +3,10 @@
   <div class="search" >
    <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音"/>
   </div>
-  <div class="search-content" ref="search">
+  <div class="search-content" ref="search" >
     <ul>
       <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+      <li class="search-item border-bottom" v-show="showWord">没有匹配的城市</li>
     </ul>
   </div>
   </div>
@@ -23,6 +24,11 @@ export default {
       keyword: '',
       list: [],
       timer: null
+    }
+  },
+  computed:{
+    showWord () {
+      return !this.list.length
     }
   },
   mounted () {
