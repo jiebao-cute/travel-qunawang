@@ -18,7 +18,8 @@ export default {
   name: 'CityAlphabet',
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0
     }
   },
   computed: {
@@ -33,6 +34,9 @@ export default {
   props: {
     cities: Object
   },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop //  A相对顶部的距离
+  },
   methods: {
     handleLetterClick (e) {
       this.$emit('change', e.target.innerText)
@@ -42,9 +46,8 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        const startY = this.$refs['A'][0].offsetTop //  A相对顶部的距离
         const touchY = e.touches[0].clientY - 74 // 手指触碰相对高度
-        const index = Math.floor((touchY - startY) / 20)
+        const index = Math.floor((touchY - this.startY) / 20)
         if (index >= 0 && index <= this.letters.length) {
           this.$emit('change', this.letters[index])
         }
