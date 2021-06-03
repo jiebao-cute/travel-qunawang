@@ -47,8 +47,8 @@ export default {
     letter: String
   },
   methods: {
-    handleCityClick(city){
-      this.$store.commit('changeCity',city)
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
       this.$router.push('/')
     }
   },
