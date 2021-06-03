@@ -5,7 +5,11 @@
   </div>
   <div class="search-content" ref="search" v-show="keyword">
     <ul>
-      <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+      <li class="search-item border-bottom"
+          v-for="item in list"
+          @click="handleCityClick(item.name)"
+          :key="item.id"
+      >{{item.name}}</li>
       <li class="search-item border-bottom" v-show="showWord">没有匹配的城市</li>
     </ul>
   </div>
@@ -18,6 +22,11 @@ export default {
   name: 'CitySearch',
   props: {
     cities: Object
+  },
+  methods: {
+    handleCityClick(city){
+      this.$store.commit('changeCity',city)
+    }
   },
   data () {
     return {
