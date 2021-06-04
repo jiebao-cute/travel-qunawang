@@ -11,7 +11,6 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
-    gallery
   </div>
 </template>
 <script>
@@ -28,6 +27,9 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.container >>> .swiper-container {
+  overflow: inherit
+}
 .container{
   display: flex
   flex-direction: column
@@ -40,7 +42,6 @@ export default {
   right: 0
   background: #000000
   .wrapper{
-    overflow: hidden
     width: 100%
     height: 0
     padding-bottom: 100%
@@ -49,6 +50,7 @@ export default {
     }
     .swiper-pagination{
       color: #ffffff
+      bottom: -1rem
     }
   }
 }
