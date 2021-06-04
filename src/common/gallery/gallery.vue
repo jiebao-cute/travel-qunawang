@@ -6,7 +6,7 @@
           <img class="gallery-img" src="http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg" alt="slow"/>
         </swiper-slide>
         <swiper-slide>
-          <img class="gallery-img" src="http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg" alt="slow"/>
+          <img class="gallery-img" src="http://img1.qunarzz.com/sight/p0/201308/23/b283071686e64dfec8d65eac.jpg_140x140_8c5a7c49.jpg" alt="slow"/>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -24,6 +24,8 @@ export default {
       swiperOptions: {
         pagination : '.swiper-pagination',
         paginationType : 'fraction',
+        observer: true, //  观察者模式  当重新渲染时会出现滚动宽度无法计算
+        observeParents: true,
       }
     }
   },
