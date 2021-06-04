@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="banner">
     <img class="banner-img" src="https://img1.qunarzz.com/travel/d9/1805/4d/c5c2dd88b67b4cb5.jpg_r_480x360x95_740b9c1e.jpg" alt="">
     <div class="banner-info">
@@ -8,11 +9,15 @@
         39
       </div>
     </div>
+   </div>
+    <common-gallery></common-gallery>
   </div>
 </template>
 <script>
+import CommonGallery from 'common/gallery/gallery.vue'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  components: {CommonGallery }
 }
 </script>
 <style lang="stylus" scoped>
