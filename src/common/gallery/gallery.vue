@@ -20,6 +20,7 @@ export default {
   data () {
     return {
       swiperOptions: {
+        pagination : '.swiper-pagination',
         paginationType : 'fraction',
       }
     }
@@ -45,6 +46,9 @@ export default {
     padding-bottom: 100%
     .gallery-img{
       width: 100%
+    }
+    .swiper-pagination{
+      color: #ffffff
     }
   }
 }
