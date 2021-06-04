@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="closeGallery">
     <div class="wrapper">
       <swiper :options="swiperOptions">
         <swiper-slide>
@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'CommonGallery',
+  props: {
+    showGallery: Boolean
+  },
   data () {
     return {
       swiperOptions: {
@@ -24,6 +27,11 @@ export default {
       }
     }
   },
+  methods: {
+    closeGallery () {
+      this.$emit('closeGallery')
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
