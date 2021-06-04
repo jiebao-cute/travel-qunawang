@@ -17,7 +17,7 @@
 import CommonGallery from 'common/gallery/gallery.vue'
 export default {
   name: 'DetailBanner',
-  components: {CommonGallery }
+  components: { CommonGallery }
 }
 </script>
 <style lang="stylus" scoped>
