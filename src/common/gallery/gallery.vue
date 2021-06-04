@@ -2,11 +2,8 @@
   <div class="container" @click="closeGallery">
     <div class="wrapper">
       <swiper :options="swiperOptions">
-        <swiper-slide>
-          <img class="gallery-img" src="http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg" alt="slow"/>
-        </swiper-slide>
-        <swiper-slide>
-          <img class="gallery-img" src="http://img1.qunarzz.com/sight/p0/201308/23/b283071686e64dfec8d65eac.jpg_140x140_8c5a7c49.jpg" alt="slow"/>
+        <swiper-slide v-for="(item,index) of imgs" :key="index" >
+          <img class="gallery-img" :src="item" alt="slow"/>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -17,15 +14,18 @@
 export default {
   name: 'CommonGallery',
   props: {
-    showGallery: Boolean
+    imgs: Array,
+    default () {
+      return []
+    }
   },
   data () {
     return {
       swiperOptions: {
-        pagination : '.swiper-pagination',
-        paginationType : 'fraction',
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction',
         observer: true, //  观察者模式  当重新渲染时会出现滚动宽度无法计算
-        observeParents: true,
+        observeParents: true
       }
     }
   },

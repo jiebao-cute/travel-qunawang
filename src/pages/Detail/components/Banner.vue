@@ -10,7 +10,7 @@
       </div>
     </div>
    </div>
-    <common-gallery v-show="showGallery"  @closeGallery="closeGallery"></common-gallery>
+    <common-gallery v-show="showGallery"  @closeGallery="closeGallery" :imgs="imgs"></common-gallery>
   </div>
 </template>
 <script>
@@ -20,6 +20,7 @@ export default {
   components: { CommonGallery },
   data () {
     return {
+      imgs: ['http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg', 'http://img1.qunarzz.com/sight/p0/201308/23/b283071686e64dfec8d65eac.jpg_140x140_8c5a7c49.jpg'],
       showGallery: false
     }
   },
