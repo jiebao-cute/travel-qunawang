@@ -5,7 +5,7 @@
     <div class="iconfont header-icon-abs">&#xe60e;</div>
   </div>
     </router-link>
-  <div class="header-fixed" v-show="!showAbc">景点详情
+  <div class="header-fixed" v-show="!showAbc" :style="opacityStyle">景点详情
     <router-link to="/">
       <div class="iconfont header-fixer-back">&#xe60e;</div>
     </router-link>
@@ -17,13 +17,23 @@ export default {
   name: 'DetailHeader',
   data () {
     return {
-      showAbc: true
+      showAbc: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
   },
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
-      this.showAbc = top <= 60
+      if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = { opacity }
+        this.showAbc = false
+      }else {
+        this.showAbc = true
+      }
     }
   },
   activated () {
