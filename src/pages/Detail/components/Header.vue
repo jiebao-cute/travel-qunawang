@@ -1,11 +1,11 @@
 <template>
   <div>
-    <router-link to="/">
+    <router-link to="/" v-show="showAbc">
   <div class="header-abc">
     <div class="iconfont header-icon-abs">&#xe60e;</div>
   </div>
     </router-link>
-  <div class="header-fixed">景点详情
+  <div class="header-fixed" v-show="!showAbc">景点详情
     <router-link to="/">
       <div class="iconfont header-fixer-back">&#xe60e;</div>
     </router-link>
@@ -14,7 +14,12 @@
 </template>
 <script>
 export default {
-  name: 'DetailHeader'
+  name: 'DetailHeader',
+  data () {
+    return {
+      showAbc: true
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
