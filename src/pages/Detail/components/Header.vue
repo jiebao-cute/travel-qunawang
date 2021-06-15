@@ -19,6 +19,15 @@ export default {
     return {
       showAbc: true
     }
+  },
+  methods: {
+    handleScroll () {
+      const top = document.documentElement.scrollTop
+      this.showAbc = top <= 60
+    }
+  },
+  activated () {
+    window.addEventListener('scroll', this.handleScroll)
   }
 }
 </script>
