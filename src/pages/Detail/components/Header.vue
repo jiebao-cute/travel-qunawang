@@ -31,16 +31,14 @@ export default {
         opacity = opacity > 1 ? 1 : opacity
         this.opacityStyle = { opacity }
         this.showAbc = false
-      }else {
-        this.showAbc = true
-      }
+      } else { this.showAbc = true }
     }
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
-    window.removeEventListener('scroll',this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
