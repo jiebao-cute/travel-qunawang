@@ -17,7 +17,15 @@ export default {
   data () {
     return {
       list: [{
-        title: '成人票'
+        title: '成人票',
+        children:[{
+          title: '成人三馆连票',
+          children: [{
+            title: '成人三馆连票-大连连锁店销售'
+          }]
+        },{
+          title: '成人五官连票'
+        }]
       },{
         title: '学生票'
       },{
