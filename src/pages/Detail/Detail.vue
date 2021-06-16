@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     getListInfo () {
-      axios.get('/api/detile.json')
+      axios.get('/api/detile.json?id=' + this.$route.params.id)
         .then(this.getListInfoSucc)
     },
     getListInfoSucc (res) {
